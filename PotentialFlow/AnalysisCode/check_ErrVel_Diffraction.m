@@ -66,7 +66,7 @@ for j = 1:length(Omega)
   % add phase shift
   [k,~] = dispersion(sigma,h,d,N);
   a_p   = diag(exp(-1i*k*L))*A_p;
-  b_m   = diag(exp( 1i*k*L))*B_m;
+  b_m   = diag(exp(-1i*k*L))*B_m;
 
   % OUTPUTS:
   clear a_m b_p alpha_p alpha_m A B k kappa

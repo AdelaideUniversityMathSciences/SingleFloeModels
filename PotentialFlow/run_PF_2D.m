@@ -79,7 +79,7 @@ sigma = omega^2/g;
 [field] = wavefield('f',f,h);
 k = cell2mat(field(5,2));
 a_p0 = A_p0*exp(-1i*k*L);
-b_m0 = B_m0*exp(1i*k*L);
+b_m0 = B_m0*exp(-1i*k*L);
 a_p = [a_p0;zeros(N,1)];
 b_m = [b_m0;zeros(N,1)];
 

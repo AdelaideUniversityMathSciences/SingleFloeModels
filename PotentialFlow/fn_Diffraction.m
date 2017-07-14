@@ -48,7 +48,7 @@ function [a_m,b_p,alpha_p,alpha_m,A,B,k,kappa] = ...
 % INCIDENT COEFFICIENTS
 a_p0 = A_p0*exp(-1i*k(1)*L);
 a_p  = [a_p0;zeros(N,1)];
-b_m0 = B_m0*exp(1i*k(1)*L);
+b_m0 = B_m0*exp(-1i*k(1)*L);
 b_m  = [b_m0;zeros(N,1)];
 
 % % ANGLE OF INCIDENCE
