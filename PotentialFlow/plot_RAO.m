@@ -20,13 +20,22 @@
 
 function plot_RAO
 
-% PHYSICAL PARAMETERS FOR AMC EXPERIMENTS
-Lambda = linspace(0.4,6,50);
-h = 0.831;
-L = 0.2;
-rho_b = 650;
+% % PHYSICAL PARAMETERS FOR AMC EXPERIMENTS
+% Lambda = linspace(0.4,6,50);
+% h = 0.831;
+% L = 0.2;
+% rho_b = 650;
+% rho = 1000;
+% D = 0.015;
+
+% PHYSICAL PARAMETERS FOR BGO (OCEANIDE) EXPERIMENTS
+dat = open('param_bgo.mat');
+Lambda = dat.bgo_wavelengths;
+h = 3.1;
+L = 0.495;
+rho_b = 551;
 rho = 1000;
-D = 0.015;
+D = 0.033;
 
 N = 100;
 
@@ -66,7 +75,7 @@ figure(1)
 hold on
 set(gcf,'position',[100 400 500 400]);
 set(gca,'FontSize',16)
-plot(Lambda/2/L,rao_s_2dr,'k--')
+plot(Lambda/2/L,rao_s_2dr,'ko')
 ylabel('Surge RAO')
 xlabel('Wavelength / Floe length [m/m]')
 ylim([0 1.2])
@@ -75,7 +84,7 @@ figure(2)
 hold on
 set(gcf,'position',[600 400 500 400]);
 set(gca,'FontSize',16)
-plot(Lambda/2/L,rao_h_2dr,'k--') 
+plot(Lambda/2/L,rao_h_2dr,'ko') 
 ylabel('Heave RAO')
 xlabel('Wavelength / Floe length [m/m]')
 ylim([0 1.2])
@@ -84,8 +93,10 @@ figure(3)
 hold on
 set(gcf,'position',[350 0 500 400]);
 set(gca,'FontSize',16)
-plot(Lambda/2/L,rao_p_2dr,'k--')
+plot(Lambda/2/L,rao_p_2dr,'ko')
 ylabel('Pitch RAO')
 xlabel('Wavelength / Floe length [m/m]')
 ylim([0 1.2])
 box on
+
+pause
